@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Tastiera } from "../tastiera/tastiera";
 import { DisplayComponent } from "../display/display";
+import { evaluate } from 'mathjs';
 
 @Component({
   selector: 'calcolatrice',
@@ -19,11 +20,12 @@ export class Calcolatrice {
     this.display = '';
   }
 
-  calculate() {
-    try {
-      this.display = eval(this.display).toString();
-    } catch (e) {
-      this.display = 'Errore';
-    }
+calculate() {
+  try {
+    this.display = evaluate(this.display).toString();
+  } catch (e) {
+    this.display = 'Errore';
   }
+}
+
 }
