@@ -1,0 +1,8 @@
+<div class="calcolatrice">
+  <display [valore]="display"></display>
+  <tastiera 
+    (onButtonClick)="appendValue($event)" 
+    (onClear)="clear()" 
+    (onEquals)="calculate()">
+  </tastiera>
+</div>
